@@ -1,5 +1,5 @@
 // text showing 'pick one' in the console //
-console.log("Hello World!");
+console.log("Pick one!");
 
 // the user inputs a text //
 const userHand = (userInput) => {
@@ -10,7 +10,9 @@ const userHand = (userInput) => {
         console.log ("You should only pick between rock, paper and scissors");
     }
 };
+
 //input needs to be stored inside a var //
+
 
 // randomize the computer's choice //
 const getComputerChoice = () => {
@@ -24,20 +26,43 @@ const getComputerChoice = () => {
             return "scissors";
     }
 };
-// if user == computer //
-       // result = tie //
 
+// compare results with ELSE and IF statements //
 const winnerIs = (userChoice, computerChoice) => {
-    
-}
-    // compare results with ELSE and IF statements //
-    function playRound(playerSelection, computerSelection) {
+    if (userChoice === computerChoice) { // if user == computer //
+        return "It's a Tie! Go figure.";            // result = tie //
+    }
+
+    // log different messages depending on results //
+    if (userChoice === "rock") {
+        if (computerChoice === "paper") {
+            return "You Lose! Paper beats Rock! To the dungeon you go.";
+        } else {
+            return "You Won!";
+        }
+        if (userChoice === "paper") {
+            if (computerChoice === "scissors") {
+                return "You Lose! Paper beats Scissors! Activating trapdoor...";
+            } else {
+                return "You Win! Have a well earned cookie.";
+            }
+        }
+        if (userChoice === "scissors") {
+            if (computerChoice === "rock") {
+                return "You Lose! Better find a hiding spot!";
+            } else {
+                return "You Win!"
+            }
+        }
+     }
+    };
+
+// back to beginning for new inputs from both players, basically a loop //
+function playRound(playerSelection, computerSelection) {
 
     }
         
-// log different messages depending on results //
 
-// back to beginning for new inputs from both players //
 
     // print the result //
     // ask if they want to play again //
@@ -50,4 +75,3 @@ const winnerIs = (userChoice, computerChoice) => {
 
 
 // add a score //
-
