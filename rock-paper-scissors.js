@@ -1,77 +1,67 @@
-// text showing 'pick one' in the console //
-console.log("Pick one!");
+// Player Selection in console //
+let notice = prompt("Rock, Paper or Scissors?");
 
-// the user inputs a text //
-const userHand = (userInput) => {
+// The user inputs a text, stored inside a var //
+const userSelection = (userInput) => {
     userInput = userInput.toLowerCase();
     if (userInput == "rock" || userInput == "paper" || userInput == "scissors") {
         return userInput;
     } else {
-        console.log ("You should only pick between rock, paper and scissors");
+        console.log ("You can only pick between rock, paper and scissors");
     }
 };
 
-//input needs to be stored inside a var //
+let playerScore = 0
+let computerScore = 0
 
-
-// randomize the computer's choice //
+// Randomize the computer's choice //
 const getComputerChoice = () => {
+    const arrOfChoices = ['rock', 'paper', 'scissors']
     constRandomNumber = Math.floor(Math.random() * 3);
-    switch (randomNumber) {
-        case 0:
-            return "rock";
-        case 1:
-            return "paper";
-        case 2:
-            return "scissors";
-    }
+  
+    const computerSelection = arrOfChoices[constRandomNumber]
+    return computerSelection
 };
 
-// compare results with ELSE and IF statements //
-const winnerIs = (userChoice, computerChoice) => {
-    if (userChoice === computerChoice) { // if user == computer //
+// Function to play round AND decide winner //
+const winnerIs = (userSelection, computerSelection) => {
+    if (userSelection === computerSelection) {            // if user == computer //
         return "It's a Tie! Go figure.";            // result = tie //
-    }
+    } else if (playerSelection === 'scissors') && computerSelection === 'scissors')
 
-    // log different messages depending on results //
-    if (userChoice === "rock") {
-        if (computerChoice === "paper") {
-            return "You Lose! Paper beats Rock! To the dungeon you go.";
+
+    // 
+    if (userSelection === "rock") {
+        if (computerSelection === "paper") {
+            return "You Lose! Rock beats Paper! To the dungeon you go.";
         } else {
             return "You Won!";
         }
-        if (userChoice === "paper") {
-            if (computerChoice === "scissors") {
+        if (userSelection === "paper") {
+            if (computerSelection === "scissors") {
                 return "You Lose! Paper beats Scissors! Activating trapdoor...";
             } else {
-                return "You Win! Have a well earned cookie.";
+                return "You Win! Have a cookie.";
             }
         }
-        if (userChoice === "scissors") {
-            if (computerChoice === "rock") {
+        if (userSelection === "scissors") {
+            if (computerSelection === "rock") {
                 return "You Lose! Better find a hiding spot!";
             } else {
                 return "You Win!"
             }
         }
-     }
+     } //
     };
 
-// back to beginning for new inputs from both players, basically a loop //
-function playRound(playerSelection, computerSelection) {
-
-    }
-        
-
-
     // print the result //
-    // ask if they want to play again //
-    // if answer is no: //
-    // break loop //
+const playerSelection = 'rock';
+const computerSelection = getComputerChoice();
 
-        // end //
-    // print "thank you for playing" //
-    // exit //
+const game = () => {
+    for (let i = 0; i < 5; i++) {
+    console.log(winnerIs(playerSelection, computerSelection));
+    }
+}
 
-
-// add a score //
+game();
