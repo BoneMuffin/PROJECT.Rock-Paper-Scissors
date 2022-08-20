@@ -25,35 +25,27 @@ const getComputerChoice = () => {
 
 // Function to play round AND decide winner //
 const winnerIs = (userSelection, computerSelection) => {
-    if (userSelection === computerSelection) {            // if user == computer //
-        return "It's a Tie! Go figure.";            // result = tie //
-    } else if (playerSelection === 'scissors') && computerSelection === 'scissors')
-
-
-    // 
-    if (userSelection === "rock") {
-        if (computerSelection === "paper") {
-            return "You Lose! Rock beats Paper! To the dungeon you go.";
-        } else {
-            return "You Won!";
+    if (userSelection === 'rock' && computerSelection === 'rock') {            // if user == computer //
+            return "It's a tie! Go figure!";            // result = tie //
+        } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
+            return "It's a tie! Both picked scissors!"
+        } else if (playerSelection === 'paper' && computerSelection === 'paper') {
+            return "It's a tie! You both picked paper!"
+        } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+            return "You lose! Rock beats scissors!"
+        } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+            return "You win! Scissors beat paper!"
+        } else if (playerSelection === 'rock' && computerSelection === 'paper') {
+            return "You lose! Paper beats rock!"
+        } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+            return "You win! Rock beats scissors! Have a cookie."
+        } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+            return "You lose! Scissors beat paper! Activating trapdoor..."
+        } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+            return "You win! Paper beats rock!"
         }
-        if (userSelection === "paper") {
-            if (computerSelection === "scissors") {
-                return "You Lose! Paper beats Scissors! Activating trapdoor...";
-            } else {
-                return "You Win! Have a cookie.";
-            }
-        }
-        if (userSelection === "scissors") {
-            if (computerSelection === "rock") {
-                return "You Lose! Better find a hiding spot!";
-            } else {
-                return "You Win!"
-            }
-        }
-     } //
     };
-
+    
     // print the result //
 const playerSelection = 'rock';
 const computerSelection = getComputerChoice();
