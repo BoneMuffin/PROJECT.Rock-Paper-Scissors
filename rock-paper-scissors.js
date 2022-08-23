@@ -31,22 +31,22 @@ const getUserChoice = (playerSelection) => {
         return ("You got a tie! Go figure."); 
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
         compScore++; // stands for compScore = compScore + compScore //
-        return ("You lose! Rock beats scissors!");
+        return ("You lose this round! Rock beats scissors!");
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
         playerScore++;
-        return ("You win! Scissors beat paper!");
+        return ("You win this round! Scissors beat paper!");
     } else if (playerSelection === 'rock' && computerSelection === 'paper') {
         compScore++;
-        return ("You lose! Paper beats rock!");
+        return ("You lose this round! Paper beats rock!");
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
         playerScore++;
-        return ("You win! Rock beats scissors! Have a cookie.");
+        return ("You win this round! Rock beats scissors! Have a cookie.");
     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
         compScore++;
-        return ("You lose! Scissors beat paper! Activating trapdoor...");
+        return ("You lose this round! Scissors beat paper! Activating trapdoor...");
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
         playerScore++;
-        return ("You win! Paper beats rock!");
+        return ("You win this round! Paper beats rock!");
    }
 }
 
