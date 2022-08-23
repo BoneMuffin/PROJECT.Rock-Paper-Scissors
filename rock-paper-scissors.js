@@ -10,24 +10,24 @@ const getComputerChoice = () => {
 
 // Get user input //
 const getUserChoice = (playerSelection) => {
-    let userInput = prompt("Choose your weapon!", "Rock, Paper, Scissors")
-    if (userInput.toLowerCase() === 'rock'){
-     return userInput;
-     }
-    else if (userInput.toLowerCase() === 'paper'){
-       return userInput;
-     }
-     else if (userInput.toLowerCase() === 'scissors'){
-       return userInput;
-     }
-     else {console.log('Not Valid. Start running.')}
-     }; 
+    let userInput = prompt("Choose your weapon!", "Rock, Paper, Scissors");
+    if (userInput.toLowerCase() === 'rock') {
+        return userInput;
+    }
+    else if (userInput.toLowerCase() === 'paper') {
+        return userInput;
+    }
+    else if (userInput.toLowerCase() === 'scissors') {
+        return userInput;
+    }
+    else { console.log('Not Valid. Start running.'); }
+} 
 
 
 // STEP 4, single round //
  const playRound = (playerSelection, computerSelection) => {
     if (playerSelection === computerSelection) { // if user == computer //
-        return ("You got a tie! Go figure!"); 
+        return ("You got a tie! Go figure."); 
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
         compScore++ // stands for compScore = compScore + compScore //
         return ("You lose! Rock beats scissors!");
@@ -50,22 +50,22 @@ const getUserChoice = (playerSelection) => {
 }
 
 // STEP 6 Loop for the rounds //
-const game = () => {
- for (let i = 1; i <= 5; i++) {
-    const playerSelection = prompt ('Choose your weapon!','Rock, Paper, Scissors').toLowerCase()
-    const computerSelection = getComputerChoice();
-    console.log(playRound(playerSelection, computerSelection));
+function game() {
+    for (let i = 1; i <= 5; i++) {
+        const playerSelection = prompt('Choose your weapon!', 'Rock, Paper, Scissors').toLowerCase();
+        const computerSelection = getComputerChoice();
+        console.log(playRound(playerSelection, computerSelection));
 
- }
+    }
 
-     // print the result //
- if (playerScore > compScore) {
-        return 'You won the game! GG!'
+    // print the result //
+    if (playerScore > compScore) {
+        return 'You won the game! GG!';
     } else if (playerScore < compScore) {
-        return 'You lost the game! The computer is now basking in its own victory.'
+        return 'You lost the game! The computer is now basking in its own victory.';
     } else {
-        return 'The game ended in a tie! Existential crisis incoming...'
-     } 
- }
+        return 'The game ended in a tie! Existential crisis incoming...';
+    }
+}
 
-console.log(game())
+console.log(game());
