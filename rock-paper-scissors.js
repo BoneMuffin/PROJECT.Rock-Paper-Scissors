@@ -10,15 +10,15 @@ const getComputerChoice = () => {
 
 // Get user input //
 const getUserChoice = (playerSelection) => {
-    let userInput = prompt("Choose your weapon!", "Rock, Paper, Scissors");
-    if (userInput.toLowerCase() === 'rock') {
-        return userInput;
+    let getUserChoice = prompt("Choose your weapon!", "Rock, Paper, Scissors");
+    if (getUserChoice.toLowerCase() === 'rock') {
+        return getUserChoice;
     }
-    else if (userInput.toLowerCase() === 'paper') {
-        return userInput;
+    else if (getUserChoice.toLowerCase() === 'paper') {
+        return getUserChoice;
     }
-    else if (userInput.toLowerCase() === 'scissors') {
-        return userInput;
+    else if (getUserChoice.toLowerCase() === 'scissors') {
+        return getUserChoice;
     }
     else { console.log('Not Valid. Start running.'); }
 } 
@@ -26,32 +26,33 @@ const getUserChoice = (playerSelection) => {
 
 // STEP 4, single round //
  const playRound = (playerSelection, computerSelection) => {
+    console.log(playerSelection, computerSelection);
     if (playerSelection === computerSelection) { // if user == computer //
         return ("You got a tie! Go figure."); 
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-        compScore++ // stands for compScore = compScore + compScore //
+        compScore++; // stands for compScore = compScore + compScore //
         return ("You lose! Rock beats scissors!");
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-        playerScore++
+        playerScore++;
         return ("You win! Scissors beat paper!");
     } else if (playerSelection === 'rock' && computerSelection === 'paper') {
-        compScore++
+        compScore++;
         return ("You lose! Paper beats rock!");
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-        playerScore++
+        playerScore++;
         return ("You win! Rock beats scissors! Have a cookie.");
     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-        compScore++
+        compScore++;
         return ("You lose! Scissors beat paper! Activating trapdoor...");
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-        playerScore++
+        playerScore++;
         return ("You win! Paper beats rock!");
    }
 }
 
 // STEP 6 Loop for the rounds //
-function game() {
-    for (let i = 1; i <= 5; i++) {
+const game = () => {
+    for (let i = 0; i < 5; i++) {
         const playerSelection = prompt('Choose your weapon!', 'Rock, Paper, Scissors').toLowerCase();
         const computerSelection = getComputerChoice();
         console.log(playRound(playerSelection, computerSelection));
