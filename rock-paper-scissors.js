@@ -1,5 +1,9 @@
 let playerScore = 0
 let compScore = 0
+const rockButton = document.querySelector('.rock');
+const paperButton = document.querySelector('.paper');
+const scissorsButton = document.querySelector('.scissors');
+
 
 // Randomize the computer's choice STEP 3 //
 const getComputerChoice = () => {
@@ -52,12 +56,11 @@ const getUserChoice = (playerSelection) => {
 
 // STEP 6 Loop for the rounds //
 const game = () => {
-    for (let i = 0; i < 5; i++) {
-        const playerSelection = prompt('Choose your weapon!', 'Rock, Paper, Scissors').toLowerCase();
-        const computerSelection = getComputerChoice();
-        console.log(playRound(playerSelection, computerSelection));
-
-    }
+  //  for (let i = 0; i < 5; i++) {
+   //     const playerSelection = prompt('Choose your weapon!', 'Rock, Paper, Scissors').toLowerCase();
+    //    const computerSelection = getComputerChoice();
+     //   console.log(playRound(playerSelection, computerSelection));
+    //}
 
     // print the result //
     if (playerScore > compScore) {
