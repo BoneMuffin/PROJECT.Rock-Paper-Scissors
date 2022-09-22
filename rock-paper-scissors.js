@@ -16,7 +16,7 @@ const getComputerChoice = () => {
  const playRound = (playerSelection, computerSelection) => {
     const p = document.createElement('p');
     if (playerSelection === computerSelection) { 
-    p.innerText = `It's a tie! You both picked ${playerSelection}! Go figure.`; 
+    p.innerText = `You got a tie! You both picked ${playerSelection}!`; 
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
     compScore++; // stands for compScore = compScore + compScore //
     p.innerText = "You lose this round! Rock beats scissors!";
