@@ -68,8 +68,8 @@ const checkWinner = (playerScore, compScore) => {
 };
 
 const updateScores = (playerScore, compScore) => {
-    playerScoreSpan.innerText = `${playerScore}`
-    computerScoreSpan.innerText = `${compScore}`
+    playerScoreSpan.innerText = `Player Score: ${playerScore}`
+    computerScoreSpan.innerText = `Computer Score: ${compScore}`
 }
 
 rockButton.addEventListener('click', () => {
@@ -95,21 +95,3 @@ scissorsButton.addEventListener('click', () => {
     updateScores(playerScore, compScore);
     checkWinner(playerScore, compScore)
 });
-
-// STEP 6 Loop for the rounds //
-//const game = () => {
-  //  for (let i = 0; i < 5; i++) {
-   //     const playerSelection = prompt('Choose your weapon!', 'Rock, Paper, Scissors').toLowerCase();
-    //    const computerSelection = getComputerChoice();
-     //   console.log(playRound(playerSelection, computerSelection));
-    //}
-
-    // print the result //
-   // if (playerScore > compScore) {
-    //    return 'You won the game! GG!';
-    //} else if (playerScore < compScore) {
-      //  return 'You lost the game! The computer is now basking in its own victory.';
-    //} else {
-      //  return 'The game ended in a tie! Existential crisis incoming...';
-    //}
-//}
