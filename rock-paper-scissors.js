@@ -50,6 +50,11 @@ const checkWinner = (playerScore, compScore) => {
         h2.classList.add('computer-won')
         h2.innerText = `You lost ${playerScore} to ${compScore}! The computer is now basking in its own victory.`
     }
+
+    if(playerScore === 5 & compScore === 5) {
+        h2.classList.add('is-tie')
+        h2.innerText = 'It is a tie! Go figure.'
+    }
     outcomeDiv.append(h2)
 };
 
