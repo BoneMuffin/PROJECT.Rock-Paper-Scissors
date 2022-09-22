@@ -86,3 +86,13 @@ scissorsButton.addEventListener('click', () => {
     updateScores(playerScore, compScore);
     checkWinner(playerScore, compScore)
 });
+
+// play again button
+const playAgainButton = document.createElement("button");
+playAgainButton.textContent = "Play again?";
+outcomeDiv.appendChild(playAgainButton);
+
+// if clicked, reload page
+playAgainButton.addEventListener('click', () => {
+location.reload();
+});
