@@ -16,7 +16,7 @@ const getComputerChoice = () => {
  const playRound = (playerSelection, computerSelection) => {
     if (playerSelection === computerSelection) { 
       const p = document.createElement('p');
-      p.innerText = "You got a tie! Go figure."; 
+      p.innerText = `It's a tie! You both picked ${playerSelection}! Go figure.`; 
       outcomeDiv.appendChild(p);
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
     compScore++; // stands for compScore = compScore + compScore //
@@ -55,14 +55,14 @@ const checkWinner = (playerScore, compScore) => {
     if (playerScore === 5) {
         const h2 = document.createElement("h2")
         h2.classList.add('player-won')
-        h2.innerText = 'You won! GG!'
+        h2.innerText = `You won ${playerScore} to ${compScore}! GG!`
         outcomeDiv.append(h2)
     }
      
     if (compScore === 5) {
         const h2 = document.createElement("h2")
         h2.classList.add('computer-won')
-        h2.innerText = 'You lost! The computer is now basking in its own victory.'
+        h2.innerText = `You lost ${playerScore} to ${compScore}! The computer is now basking in its own victory.`
         outcomeDiv.append(h2)
     }
 };
