@@ -3,59 +3,89 @@ let compScore = 0
 const rockButton = document.querySelector('.rock');
 const paperButton = document.querySelector('.paper');
 const scissorsButton = document.querySelector('.scissors');
+const outcomeDiv = document.querySelector('.outcome');
 
-
-// Randomize the computer's choice STEP 3 //
 const getComputerChoice = () => {
     const arrOfChoices = ['rock', 'paper', 'scissors']
     const randomNum = Math.floor(Math.random() * arrOfChoices.length)
     return arrOfChoices[randomNum]
 };
 
-// Get user input //
-const getUserChoice = (playerSelection) => {
-    let getUserChoice = prompt("Choose your weapon!", "Rock, Paper, Scissors");
-    if (getUserChoice.toLowerCase() === 'rock') {
-        return getUserChoice;
-    }
-    else if (getUserChoice.toLowerCase() === 'paper') {
-        return getUserChoice;
-    }
-    else if (getUserChoice.toLowerCase() === 'scissors') {
-        return getUserChoice;
-    }
-    else { console.log('Not Valid. Start running.'); }
-} 
-
-
-// STEP 4, single round //
  const playRound = (playerSelection, computerSelection) => {
-    console.log(playerSelection, computerSelection);
-    if (playerSelection === computerSelection) { // if user == computer //
-        return ("You got a tie! Go figure."); 
+    if (playerSelection === computerSelection) { 
+      const p = document.createElement('p');
+      p.innerText = "You got a tie! Go figure."; 
+      outcomeDiv.appendChild(p);
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-        compScore++; // stands for compScore = compScore + compScore //
-        return ("You lose this round! Rock beats scissors!");
+    compScore++; // stands for compScore = compScore + compScore //
+    const p = document.createElement('p');
+    p.innerText = "You lose this round! Rock beats scissors!";
+    outcomeDiv.appendChild(p);
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-        playerScore++;
-        return ("You win this round! Scissors beat paper!");
+     playerScore++;
+     const p = document.createElement('p');
+     p.innerText = "You win this round! Scissors beat paper!";
+     outcomeDiv.appendChild(p);
     } else if (playerSelection === 'rock' && computerSelection === 'paper') {
-        compScore++;
-        return ("You lose this round! Paper beats rock!");
+    compScore++;
+     const p = document.createElement('p');
+    p.innerText= "You lose this round! Paper beats rock!";
+    outcomeDiv.appendChild(p);
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-        playerScore++;
-        return ("You win this round! Rock beats scissors! Have a cookie.");
+     playerScore++;
+     const p = document.createElement('p');
+     p.innerText = "You win this round! Rock beats scissors! Have a cookie.";
+     outcomeDiv.appendChild(p);
     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
         compScore++;
-        return ("You lose this round! Scissors beat paper! Activating trapdoor...");
+        const p = document.createElement('p');
+        p.innerText = "You lose this round! Scissors beat paper! Activating trapdoor...";
+        outcomeDiv.appendChild(p);
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-        playerScore++;
-        return ("You win this round! Paper beats rock!");
+      playerScore++;
+      const p = document.createElement('p');
+      p.innerText = "You win this round! Paper beats rock!";
+      outcomeDiv.appendChild(p);
    }
-}
+};
+
+const checkWinner = (playerScore, compScore) => {
+    if (playerScore === 5) {
+        const h2 = document.createElement("h2")
+        h2.classList.add('player-won')
+        h2.innerText = 'You won! GG!'
+    }
+     
+    if (compScore === 5) {
+        const h2 = document.createElement("h2")
+        h2.classList.add('computer-won')
+        h2.innerText = 'You lost! The computer is now basking in its own victory.'
+    }
+};
+
+rockButton.addEventListener('click', () => {
+    const computerSelection = getComputerChoice();
+    const playerSelection = 'rock'
+    playRound(playerSelection, computerSelection);
+    checkWinner(playerScore, compScore)
+});
+
+paperButton.addEventListener('click', () => {
+    const computerSelection = getComputerChoice();
+    const playerSelection = 'paper'
+    playRound(playerSelection, computerSelection);
+    checkWinner(playerScore, compScore)
+});
+
+scissorsButton.addEventListener('click', () => {
+    const computerSelection = getComputerChoice();
+    const playerSelection = 'scissors'
+    playRound(playerSelection, computerSelection);
+    checkWinner(playerScore, compScore)
+});
 
 // STEP 6 Loop for the rounds //
-const game = () => {
+//const game = () => {
   //  for (let i = 0; i < 5; i++) {
    //     const playerSelection = prompt('Choose your weapon!', 'Rock, Paper, Scissors').toLowerCase();
     //    const computerSelection = getComputerChoice();
@@ -63,13 +93,11 @@ const game = () => {
     //}
 
     // print the result //
-    if (playerScore > compScore) {
-        return 'You won the game! GG!';
-    } else if (playerScore < compScore) {
-        return 'You lost the game! The computer is now basking in its own victory.';
-    } else {
-        return 'The game ended in a tie! Existential crisis incoming...';
-    }
-}
-
-console.log(game());
+   // if (playerScore > compScore) {
+    //    return 'You won the game! GG!';
+    //} else if (playerScore < compScore) {
+      //  return 'You lost the game! The computer is now basking in its own victory.';
+    //} else {
+      //  return 'The game ended in a tie! Existential crisis incoming...';
+    //}
+//}
