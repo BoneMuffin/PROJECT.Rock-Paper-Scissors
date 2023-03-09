@@ -1,8 +1,8 @@
 let playerScore = 0
 let compScore = 0
-const rockButton = document.querySelector('.rock');
-const paperButton = document.querySelector('.paper');
-const scissorsButton = document.querySelector('.scissors');
+const rockButton = document.getElementById('rockButton');
+const paperButton = document.getElementById('paperButton');
+const scissorsButton = document.getElementById('scissorsButton');
 const outcomeDiv = document.querySelector('.outcome');
 const playerScoreSpan = document.querySelector('.player-score');
 const computerScoreSpan = document.querySelector('.computer-score');
@@ -88,7 +88,7 @@ scissorsButton.addEventListener('click', () => {
 });
 
 // play again button
-const playAgainButton = document.createElement("button");
+const playAgainButton = document.getElementById("restartBtn");
 playAgainButton.textContent = "Play again?";
 outcomeDiv.appendChild(playAgainButton);
 
