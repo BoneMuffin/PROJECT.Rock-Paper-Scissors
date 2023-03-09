@@ -1,0 +1,174 @@
+:root {
+    --black: rgb(43, 36, 45); /* text */
+    --pink: rgb(222, 54, 157);  /* header */
+    --light-pink: rgb(255, 140, 198); /* button */
+    --milky: rgb(239, 214, 210); /* background */
+}
+
+@font-face {
+    font-family: Crayon;
+    src: url(Media/CrayonHandRegular2016Demo.ttf)
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  background-color: var(--milky);
+  color: var(--black);
+  font-family: Crayon;
+  line-height: 1.6;
+  /* footer support */
+  margin-bottom: 100px;
+}
+
+button {
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    outline: none;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0px;
+  }
+
+
+main { 
+    margin-top: 20px;
+    text-align: center;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    color: var(--black);
+    font-size: 25px;
+  }
+
+a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.title {
+    font-size: 40px;
+  }
+
+.running-score {
+    margin-bottom: 15px;
+}
+
+.score-message {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.scores-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 400px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.score-box {
+    width: 170px;
+}
+
+.player-score,
+.computer-score {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.buttons-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+.btn {
+    border-radius: 10px;
+    background-color: var(--light-pink);
+    border-bottom: 5px solid var(--pink);
+  }
+  
+.btn-square {
+    width: 160px;
+    height: 160px;
+  }
+
+.btn-restart {
+    padding: 10px 20px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+  }
+
+.btn:hover {
+    background-color: var(--pink);
+    border-bottom: 5px solid var(--light-pink);
+  }
+  
+.btn:active {
+    border-bottom: none;
+  }
+  
+.sign {
+    font-size: 80px;
+    margin-bottom: 10px;
+  }
+
+/* MEDIA QUERIES */
+
+@media (max-width: 550px) {
+    .title {
+      font-size: 18px;
+    }
+  
+    .score-info {
+      font-size: 26px;
+    }
+  
+    .buttons-div {
+      gap: 10px;
+    }
+  
+    .btn-square {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .sign {
+      font-size: 50px;
+    }
+  };
