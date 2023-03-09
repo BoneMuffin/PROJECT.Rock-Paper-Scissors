@@ -43,7 +43,7 @@ const checkWinner = (playerScore, compScore) => {
     const h2 = document.createElement("h2")
     if (playerScore === 5) {
         h2.classList.add('player-won')
-        h2.innerText = `You won ${playerScore} to ${compScore}! GG!`
+        h2.innerText = `You beat the computer ${playerScore} to ${compScore}! GG!`
     }
      
     if (compScore === 5) {

@@ -118,7 +118,7 @@ a:hover {
   }
   
 .btn {
-    border-radius: 10px;
+    border-radius: 30px;
     background-color: var(--light-pink);
     border-bottom: 5px solid var(--pink);
   }
